@@ -31,7 +31,7 @@ def process_file():
 
     filename = secure_filename(file.filename)
     file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-    # file.save(file_path)
+    file.save(file_path)
     df = pd.read_excel(file_path)
     if plot_type != 'asaoka':
         graph = Graph(df,startdate, endDate,predict_date)    
